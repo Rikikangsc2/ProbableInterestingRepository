@@ -67,7 +67,7 @@ app.post('/upload', upload.single('image'), (req, res) => {
     // Schedule file deletion after 24 hours
     scheduleDeletion(fileId, 24 * 60 * 60 * 1000);
 
-    res.json({ url: `/file/${fileId}` });
+    res.send(`/file/${fileId}`);
 });
 
 // Endpoint untuk mengakses gambar
